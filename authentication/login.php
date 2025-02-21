@@ -3,7 +3,7 @@ session_start();
 
 $login_error = "";
 
-require_once "functions.php"; // Include functions.php to access isUserLoggedIn() function
+require_once "functions.php";
 require_once "dbconn.php";
 
 if (isUserLoggedIn()) {
@@ -11,7 +11,6 @@ if (isUserLoggedIn()) {
     exit;
 }
 
-// Handle login form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -63,11 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     /* Styles for the form container */
     .form-container {
-      width: 300px; /* Set the width of the form container */
-      padding: 20px; /* Add some padding around the form */
-      border: 1px solid blueviolet; /* Add a border around the form */
-      border-radius: 5px; /* Add rounded corners to the form */
-      background-color: #0088cc; /* Set a light background color */
+      width: 300px;
+      padding: 20px;
+      border: 1px solid blueviolet;
+      border-radius: 5px;
+      background-color: #0088cc;
     }
 
     /* Styles for the form elements */

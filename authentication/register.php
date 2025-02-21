@@ -2,8 +2,8 @@
 
 $register_error = "";
 
-require_once "dbconn.php"; // Include database connection
-require_once "functions.php"; // Include functions for error handling and redirection
+require_once "dbconn.php";
+require_once "functions.php";
 
 // Handle registration form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,15 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $email, $username, $password_hash);
 
     if ($stmt->execute()) {
-        // Registration successful, redirect to login page
+        // Registration successful
         redirectIfNotLoggedIn("login.php");
     } else {
         // Check for duplicate email error
         if ($conn->errno === 1062) {
-            // Duplicate entry error, handle accordingly
+            // Duplicate entry error
             $register_error = "Username or email already exists.";
         } else {
-            // Other registration error, handle accordingly
+            // Other registration error
             echo "Error registering user: " . $conn->error;
         }
     }
@@ -54,11 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Styles for the form container */
         .form-container {
-            width: 300px; /* Set the width of the form container */
-            padding: 20px; /* Add some padding around the form */
-            border: 1px solid blueviolet; /* Add a border around the form */
-            border-radius: 5px; /* Add rounded corners to the form */
-            background-color: #0088cc; /* Set a light background color */
+            width: 300px;
+            padding: 20px;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+            background-color: #0088cc;
         }
 
         /* Styles for the form elements */
