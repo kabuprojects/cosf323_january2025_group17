@@ -113,8 +113,8 @@
         </ul>
         <ul id="nav-items">
             <li><a href="index.php">Home</a></li>
-            <li><a href="products.php"></a></li>
-            <li><a href="profile.php"></a></li>
+            <li><a href="products.php">Risk Assessment</a></li>
+            <li><a href="profile.php">Settings</a></li>
             <li><a href="/authentication/logout.php">Logout</a></li>
         </ul>
     </nav>
