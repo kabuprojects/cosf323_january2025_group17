@@ -106,14 +106,14 @@
         <div class="menu-button" onclick="toggleSidebar()">&#9776;</div>
         <ul class="sidebar">
             <li onclick="toggleSidebar()"><a href="#">Close</a></li>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="/index.php">Home</a></li>
             <li><a href="risk_assessment.php">Risk Assessment</a></li>
             <li><a href="reporting_page.php">Reports</a></li>
             <li><a href="settings.php">Settings</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         <ul id="nav-items">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="/index.php">Home</a></li>
             <li><a href="risk_assessment.php">Risk Assessment</a></li>
             <li><a href="reporting_page.php">Reports</a></li>
             <li><a href="settings.php">Settings</a></li>
