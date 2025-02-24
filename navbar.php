@@ -107,14 +107,14 @@
         <ul class="sidebar">
             <li onclick="toggleSidebar()"><a href="#">Close</a></li>
             <li><a href="index.php">Home</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="products.php"></a></li>
+            <li><a href="profile.php"></a></li>
             <li><a href="/authentication/logout.php">Logout</a></li>
         </ul>
         <ul id="nav-items">
             <li><a href="index.php">Home</a></li>
-            <li><a href="products.php">Products</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="products.php"></a></li>
+            <li><a href="profile.php"></a></li>
             <li><a href="/authentication/logout.php">Logout</a></li>
         </ul>
     </nav>
