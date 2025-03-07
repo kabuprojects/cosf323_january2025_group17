@@ -1,0 +1,14 @@
+# Enable the Rewrite Engine
+RewriteEngine On
+
+# Redirect URLs with .php or .html to URLs without extensions
+RewriteCond %{THE_REQUEST} \s/+(.+)\.(php|html)\s [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Allow extension-less URLs to internally load .php files
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Allow extension-less URLs to internally load .html files
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]

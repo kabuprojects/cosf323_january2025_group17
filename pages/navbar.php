@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HazardHub Navbar</title>
+    <title></title>
     <style>
         nav {
             background-color: #1a1d3b;
@@ -108,14 +108,14 @@
             <li onclick="toggleSidebar()"><a href="#">Close</a></li>
             <li><a href="/index.php">Home</a></li>
             <li><a href="/pages/risk_assessment.php">Risk Assessment</a></li>
-            <li><a href="/pages/reporting_page.php">Reports</a></li>
+            <li><a href="/pages/reports.php">Reports</a></li>
             <li><a href="/pages/settings.php">Settings</a></li>
             <li><a href="/authentication/logout.php">Logout</a></li>
         </ul>
         <ul id="nav-items">
             <li><a href="/index.php">Home</a></li>
             <li><a href="/pages/risk_assessment.php">Risk Assessment</a></li>
-            <li><a href="/pages/reporting_page.php">Reports</a></li>
+            <li><a href="/pages/reports.php">Reports</a></li>
             <li><a href="/pages/settings.php">Settings</a></li>
             <li><a href="/authentication/logout.php">Logout</a></li>
         </ul>

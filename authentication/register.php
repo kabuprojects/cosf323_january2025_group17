@@ -38,6 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Register</title>
     <style>
         body {
+
+            background-image: url(../css/images/loginwallpaper.jpg);
+            background-color: #000033;
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents image repetition */
+
+            background-image: url(../css/images/loginwallpaper.jpg);
             background-color: #000033;
             display: flex;
             justify-content: center;
@@ -45,15 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-        }
+            }
 
         .form-container {
             width: 90%;
             max-width: 400px;
             padding: 30px;
             border: 1px solid #007bff;
-            border-radius: 8px;
-            background-color: #001a4d;
+            border-radius: 25px;
+            background-color:rgba(0, 26, 77, 0.61);
             color: #fff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -77,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-bottom: 15px; 
             padding: 12px; 
             border: 2px solid #007bff; 
-            border-radius: 5px; 
+            border-radius: 25px; 
             background-color: #003366; 
             color: #fff; 
             font-size: 16px;
@@ -96,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: block;
             width: 100%;
             border: none;
-            border-radius: 5px;
+            border-radius: 15px;
             margin-top: 15px;
             padding: 12px;
             background-color: #007bff; 

@@ -103,34 +103,6 @@
     </header>
 
     <main>
-        <section id="assessment">
-            <h2>Risk Assessment Form</h2>
-            <form id="riskForm">
-                <label for="riskTitle">Risk Title:</label>
-                <input type="text" id="riskTitle" name="riskTitle" placeholder="Enter risk title" required>
-
-                <label for="riskDesc">Description:</label>
-                <textarea id="riskDesc" name="riskDesc" placeholder="Describe the risk" rows="4" required></textarea>
-
-                <label for="likelihood">Likelihood:</label>
-                <select id="likelihood" name="likelihood" required>
-                    <option value="">Select Likelihood</option>
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                    <option value="3">High</option>
-                </select>
-
-                <label for="impact">Impact:</label>
-                <select id="impact" name="impact" required>
-                    <option value="">Select Impact</option>
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                    <option value="3">High</option>
-                </select>
-
-                <button type="submit">Submit Assessment</button>
-            </form>
-        </section>
     </main>
 
     <footer>
