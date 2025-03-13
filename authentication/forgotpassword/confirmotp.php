@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $otp = $_POST["otp"];
 
-    // Check if OTP is valid
     $stmt = $pdo->prepare("SELECT * FROM password_resets WHERE email=? AND otp=? AND expires_at > NOW()");
     $stmt->execute([$email, $otp]);
 

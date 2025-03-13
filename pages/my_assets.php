@@ -18,15 +18,26 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Assets</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            
             /*text-align: center;*/
         }
+
+        nav {
+            color: black;
+            background-color:rgb(3, 15, 122);
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 10px;
+            height: 70px;
+        }
+
 
         .container {
             max-width: 800px;
@@ -82,6 +93,17 @@ $result = mysqli_query($conn, $query);
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="color:black;">
+        <a class="navbar-brand" href="#" style="font-size: 40px;color: red;">HAZARD<span style="color:rgba(0, 0, 0, 0.8);">HUB</span></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="color: black;">
+                <li class="nav-item"><a class="nav-link" href="/index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/reports.php">reports</a></li>
+                <li class="nav-item"><a class="nav-link btn-get-started" href="/authentication/logout.php">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+
 
 <div class="container">
     <h2>My Assets</h2>
@@ -102,6 +124,8 @@ $result = mysqli_query($conn, $query);
         <?php } ?>
     </table>
 </div>
+
+<h3>Add assets here! <a href="/pages/add_asset.php">Click here</a></h3>
 
 </body>
 </html>

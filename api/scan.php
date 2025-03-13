@@ -96,12 +96,54 @@ while ($row = $result->fetch_assoc()) {
 <head>
     <title>Scan Results</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/css/navcss.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
         }
+        nav {
+            background-color: rgb(3, 15, 122);
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 10px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            color: red;
+            text-decoration: none;
+            margin-right: auto;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin-left: 20px;
+        }
+
+        .navbar-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+
         .container {
             max-width: 700px;
             margin: auto;
@@ -123,6 +165,19 @@ while ($row = $result->fetch_assoc()) {
     </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="color:black;">
+        <a class="navbar-brand" href="#" style="font-size: 40px;color: red;">HAZARD<span style="color:rgba(0, 0, 0, 0.8);">HUB</span></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="color: black;">
+                <li class="nav-item"><a class="nav-link" href="/index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/reports.php">reports</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/settings.php">Settings</a></li>
+                <li class="nav-item"><a class="nav-link btn-get-started" href="/authentication/logout.php">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <h1>Scan Results</h1>
         <?php foreach ($scan_results as $result): ?>

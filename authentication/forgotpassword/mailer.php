@@ -13,7 +13,6 @@ function sendEmail($to, $subject, $message) {
         $mail->Password = 'your-email-password';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-
         $mail->setFrom('your-email@example.com', 'Support');
         $mail->addAddress($to);
 

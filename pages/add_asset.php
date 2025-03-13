@@ -10,8 +10,10 @@
 </body>
 </html>
 <?php
+
 session_start();
 include '../authentication/dbconn.php';
+
 if (!isset($_SESSION['user_id'])) {
     die("You must be logged in to add assets.");
 }
