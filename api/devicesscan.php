@@ -1,16 +1,14 @@
 <?php
 function scanNetwork() {
-    $output = shell_exec("arp -a"); // Get ARP table
+    $output = shell_exec("arp -a");
     $devices = [];
 
-    // Extract IP and MAC addresses
     preg_match_all('/(\d+\.\d+\.\d+\.\d+)\s+.*?\s+((?:[0-9A-Fa-f]{2}-){5}[0-9A-Fa-f]{2})/', $output, $matches, PREG_SET_ORDER);
 
     foreach ($matches as $match) {
         $ip = $match[1];
         $mac = strtoupper($match[2]);
 
-        // Exclude multicast/broadcast addresses
         if (!preg_match('/^(224|239|255)\./', $ip) && $mac !== "FF-FF-FF-FF-FF-FF") {
             $devices[] = ["ip" => $ip, "mac" => $mac];
         }
@@ -55,7 +53,6 @@ $devices = scanNetwork();
                 <li class="nav-item"><a class="nav-link" href="/index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/reports.php">reports</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/my_assets.php">Assets</a></li>
-                <li class="nav-item"><a class="nav-link" href="/pages/settings.php">Settings</a></li>
                 <li class="nav-item"><a class="nav-link btn-get-started" href="/authentication/logout.php">Log out</a></li>
             </ul>
         </div>

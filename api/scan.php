@@ -1,6 +1,6 @@
-<?php
+<?php 
 session_start();
-include '../authentication/dbconn.php'; // Database connection
+include '../authentication/dbconn.php'; 
 
 if (!isset($_SESSION['user_id'])) {
     echo "Unauthorized access!";
@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch assets linked to this user
 $sql = "SELECT id, asset_name, ip_address, asset_type FROM assets WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
@@ -35,7 +34,6 @@ while ($row = $result->fetch_assoc()) {
     // Determine ports based on asset type
     switch ($asset_type) {
         case "website":
-            // Convert domain to IP (if applicable)
             $resolved_ip = gethostbyname($ip_address);
             if ($resolved_ip === $ip_address) {
                 $issues[] = "Domain resolution failed.";
@@ -46,12 +44,11 @@ while ($row = $result->fetch_assoc()) {
             break;
 
         case "server":
-            $ports_to_scan = [22, 80, 443, 3306, 8080, 3389];
-            //$ports_to_scan = range(1, 2500); // Server ports (SSH, HTTP, HTTPS, MySQL, RDP)
+            $ports_to_scan = [22, 80, 443, 3306, 8080, 3389]; // Essential server ports
             break;
 
         case "database":
-            $ports_to_scan = [1433, 3306, 5432, 1521]; // Database ports (MSSQL, MySQL, PostgreSQL, Oracle)
+            $ports_to_scan = [1433, 3306, 5432, 1521]; // Database ports
             break;
 
         default:
@@ -59,12 +56,23 @@ while ($row = $result->fetch_assoc()) {
             break;
     }
 
-    // Scan each port using fsockopen
-    foreach ($ports_to_scan as $port) {
-        $connection = @fsockopen($ip_address, $port, $errno, $errstr, 2);
-        if (is_resource($connection)) {
-            $issues[] = "Port $port - Open";
-            fclose($connection);
+    // Check if the host is reachable before scanning
+    if (!fsockopen($ip_address, 80, $errno, $errstr, 2)) {
+        $issues[] = "Host is unreachable.";
+    } else {
+        // Scan specific ports
+        $sockets = [];
+        $timeout = 2;
+
+        foreach ($ports_to_scan as $port) {
+            $sockets[$port] = @fsockopen($ip_address, $port, $errno, $errstr, $timeout);
+        }
+
+        foreach ($sockets as $port => $socket) {
+            if (is_resource($socket)) {
+                $issues[] = "Port $port - Open";
+                fclose($socket);
+            }
         }
     }
 
@@ -90,6 +98,7 @@ while ($row = $result->fetch_assoc()) {
     $stmt_insert->execute();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -172,7 +181,6 @@ while ($row = $result->fetch_assoc()) {
             <ul class="navbar-nav ml-auto" style="color: black;">
                 <li class="nav-item"><a class="nav-link" href="/index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/reports.php">reports</a></li>
-                <li class="nav-item"><a class="nav-link" href="/pages/settings.php">Settings</a></li>
                 <li class="nav-item"><a class="nav-link btn-get-started" href="/authentication/logout.php">Log out</a></li>
             </ul>
         </div>

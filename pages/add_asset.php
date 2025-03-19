@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADD ASSETS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+                nav {
+            color: black;
+            background-color:rgb(3, 15, 122);
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 10px;
+            height: 70px;
+        }
+    </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="color:black;">
+        <a class="navbar-brand" href="/index.php" style="font-size: 40px;color: red;">HAZARD<span style="color:rgba(0, 0, 0, 0.8);">HUB</span></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="color: black;">
+                <li class="nav-item"><a class="nav-link" href="/index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/reports.php">reports</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/my_assets.php">Assets</a></li>
+                <li class="nav-item"><a class="nav-link btn-get-started" href="/authentication/logout.php">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+
 </body>
 </html>
 <?php
