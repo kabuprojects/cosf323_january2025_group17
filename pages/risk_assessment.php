@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Settings page</title>
+    <title>Risk Assessment</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -96,8 +96,6 @@
     </style>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
-
     <header>
         <h1>Risk Assessment Dashboard</h1>
     </header>
